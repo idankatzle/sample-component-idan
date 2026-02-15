@@ -12,6 +12,17 @@ metadata:
 spec:
   params:
     - name: output-image
-      value: quay.io/idankatzle/sample-component-idan:latest
+      value: quay.io/idankatzle/sample-component-idan:{{revision}}
+    - name: git-url
+      value: "{{repo_url}}"
+    - name: revision
+      value: "{{revision}}"
+    - name: dockerfile
+      value: Dockerfile
+    - name: path-context
+      value: .
   pipelineRef:
     name: docker-build-oci-ta
+  workspaces:
+    - name: workspace
+      emptyDir: {}
