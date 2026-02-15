@@ -1,0 +1,17 @@
+apiVersion: tekton.dev/v1
+kind: PipelineRun
+metadata:
+  annotations:
+    pipelinesascode.tekton.dev/on-event: "[push]"
+    pipelinesascode.tekton.dev/on-target-branch: "[main]"
+    pipelinesascode.tekton.dev/max-keep-runs: "5"
+  labels:
+    appstudio.openshift.io/application: test-1
+    appstudio.openshift.io/component: sample-component-idan-cf2d0
+  name: sample-component-idan-push
+spec:
+  params:
+    - name: output-image
+      value: quay.io/idankatzle/sample-component-idan:latest
+  pipelineRef:
+    name: docker-build-oci-ta
