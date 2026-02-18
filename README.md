@@ -1,5 +1,5 @@
 # Sample Golang Component for Testing Konflux
-##tddes555rrwwrfff1
+##td55rrwwrfff1
 
 This is an example Golang component for testing [Konflux](https://github.com/konflux-ci).
 
