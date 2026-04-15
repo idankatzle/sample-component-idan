@@ -5,7 +5,7 @@ WORKDIR /workspace
 COPY --chmod=644 go.mod go.mod
 COPY --chmod=644 go.sum go.sum
 COPY --chmod=644 main.go main.go
-#1111122
+222#1111122
 RUN go mod download
 
 RUN CGO_ENABLED=0 go build -o /opt/app-root/sample-component-golang main.go
